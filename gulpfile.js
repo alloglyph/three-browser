@@ -25,7 +25,7 @@ gulp.task('build', function () {
 });
 
 gulp.task('watch', ['build'], function () {
-  gulp.watch(ENTRY_FILE, ['build']);
+  gulp.watch('*.js', ['build']);
 });
 
 gulp.task('default', ['watch']);

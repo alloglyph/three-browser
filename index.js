@@ -1,4 +1,5 @@
 const THREE = require("three");
+const {rotationGroup} = require("./object.js");
 
 const mm = 0.1;
 const cm = 1.0;
@@ -11,18 +12,6 @@ let renderer = new THREE.WebGLRenderer();
 renderer.setSize(window.innerWidth, window.innerHeight);
 document.body.appendChild(renderer.domElement);
 
-let icosahedronGeometry = new THREE.IcosahedronGeometry(5);
-let icosahedronMaterial = new THREE.MeshLambertMaterial({
-  color: 0x994d00,
-  emissive: 0x000000,
-  wireframeLinewidth: 1,
-  reflectivity: 1,
-  refractionRatio: 0.98
-});
-
-let icosahedron = new THREE.Mesh(icosahedronGeometry, icosahedronMaterial);
-let rotationGroup = new THREE.Group();
-rotationGroup.add(icosahedron);
 scene.add(rotationGroup);
 
 let ambientLight = new THREE.AmbientLight(0x404040);
